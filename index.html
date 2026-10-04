@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Engaines Primary School and Nursery Reception Phonics for Families. Helpful videos, songs, discussion and a quiz to support phonics at home.">
+  <meta name="theme-color" content="#062b73">
+  <title>Engaines Primary School and Nursery | Reception Phonics for Families</title>
+
+  <style>
+    :root {
+      --blue: #062b73;
+      --blue-2: #0b43a3;
+      --blue-3: #eaf1ff;
+      --gold: #c9a227;
+      --gold-light: #f7edc5;
+      --white: #ffffff;
+      --ink: #172033;
+      --muted: #536174;
+      --border: #d8e0ed;
+      --focus: #ffbf00;
+      --shadow: 0 8px 24px rgba(6, 43, 115, 0.12);
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: #f7f9fc;
+      line-height: 1.65;
+      font-size: 18px;
+    }
+
+    a {
+      color: var(--blue-2);
+      font-weight: 700;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    iframe:focus-visible {
+      outline: 4px solid var(--focus);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -100px;
+      background: var(--white);
+      color: var(--blue);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      z-index: 9999;
+      font-weight: 700;
+    }
+
+    .skip-link:focus { top: 1rem; }
+
+    header {
+      background: linear-gradient(135deg, var(--blue), #0b3f91);
+      color: var(--white);
+      border-bottom: 7px solid var(--gold);
+    }
+
+    .header-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2rem 1.25rem;
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .logo {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 8px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #ffe89a;
+      font-weight: 700;
+      margin: 0 0 0.35rem;
+      font-size: 0.9rem;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      margin-bottom: 0.6rem;
+    }
+
+    header p {
+      margin: 0;
+      max-width: 760px;
+      font-size: 1.1rem;
+    }
+
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0.65rem 1.25rem;
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    nav a {
+      white-space: nowrap;
+      text-decoration: none;
+      color: var(--blue);
+      padding: 0.55rem 0.8rem;
+      border-radius: 10px;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      background: var(--blue-3);
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    .welcome {
+      background: var(--white);
+      border-left: 7px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+    }
+
+    .section {
+      scroll-margin-top: 80px;
+      margin: 3rem 0;
+    }
+
+    .section-heading {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1.25rem;
+    }
+
+    .number {
+      flex: 0 0 auto;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      border: 2px solid var(--gold);
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.8rem 1.1rem;
+      border-radius: 10px;
+      border: 2px solid var(--blue);
+      margin-top: 0.5rem;
+    }
+
+    .button:hover {
+      background: var(--blue-2);
+    }
+
+    .button.gold {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #1d1d1d;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .video-card {
+      overflow: hidden;
+    }
+
+    .video-card h3 {
+      margin-bottom: 0.75rem;
+      color: var(--blue);
+    }
+
+    .video-wrap {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #111;
+    }
+
+    .video-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .embed-wrap {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #f4f4f4;
+      border: 1px solid var(--border);
+    }
+
+    .spotify {
+      height: 352px;
+      width: 100%;
+      border: 0;
+    }
+
+    .padlet {
+      height: 608px;
+      width: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .quiz {
+      height: 700px;
+      width: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .tip-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .tip {
+      background: var(--blue-3);
+      border-radius: 14px;
+      padding: 1rem;
+      border-top: 4px solid var(--gold);
+    }
+
+    .tip strong {
+      color: var(--blue);
+    }
+
+    .small-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background: var(--blue);
+      color: var(--white);
+      border-top: 7px solid var(--gold);
+      text-align: center;
+      padding: 2rem 1.25rem;
+    }
+
+    footer a { color: #ffe89a; }
+
+    @media (max-width: 800px) {
+      .header-inner {
+        grid-template-columns: 100px 1fr;
+        gap: 1rem;
+      }
+
+      .logo {
+        width: 100px;
+        height: 100px;
+      }
+
+      .video-grid,
+      .tip-list {
+        grid-template-columns: 1fr;
+      }
+
+      body { font-size: 17px; }
+    }
+
+    @media (max-width: 520px) {
+      .header-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .logo {
+        margin: 0 auto;
+      }
+
+      .nav-inner {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
+
+      main {
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    @media (prefers-contrast: more) {
+      :root {
+        --border: #6b7280;
+        --muted: #303846;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <div class="header-inner">
+      <img class="logo" src="logo.png" alt="Engaines Primary School and Nursery logo">
+      <div>
+        <p class="eyebrow">Engaines Primary School and Nursery</p>
+        <h1>Reception ‘Phonics for Families’</h1>
+        <p>Simple ideas, videos and activities to help you support your child with phonics at home.</p>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#introduction">Introduction</a>
+      <a href="#video-vault">Video Vault</a>
+      <a href="#spotify">Spotify</a>
+      <a href="#padlet">Discussion Board</a>
+      <a href="#quiz">Quiz</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="welcome" aria-labelledby="welcome-heading">
+      <h2 id="welcome-heading">Welcome!</h2>
+      <p>
+        Phonics helps children learn how letters and sounds work together. At Engaines,
+        we use phonics to help children read words, write words and become confident readers.
+      </p>
+      <p>
+        You do not need to be a phonics expert. Short, happy practice is much more useful
+        than long sessions. Use the videos and activities on this page whenever you need them.
+      </p>
+    </section>
+
+    <section class="section" id="introduction" aria-labelledby="introduction-heading">
+      <div class="section-heading">
+        <div class="number" aria-hidden="true">1</div>
+        <div>
+          <h2 id="introduction-heading">Introduction to phonics</h2>
+          <p>Start here if you are new to phonics or would like a quick reminder of how we teach it.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <p>
+          This short introduction explains the basics of phonics and gives you a clear starting point
+          for helping your child at home.
+        </p>
+        <a class="button" href="https://engainesessexsch-my.sharepoint.com/:v:/g/personal/steatheredge_engaines_essex_sch_uk/IQD44kqdSFjUQodN3P-gX2sfARXHrqCWc7RGBPTDlK4RA2k?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=kFbbSS" target="_blank" rel="noopener noreferrer">
+          Watch the introduction
+        </a>
+        <p class="small-note">The video opens in Microsoft OneDrive. You may need to sign in if your school sharing settings require it.</p>
+      </div>
+    </section>
+
+    <section class="section" id="video-vault" aria-labelledby="video-heading">
+      <div class="section-heading">
+        <div class="number" aria-hidden="true">2</div>
+        <div>
+          <h2 id="video-heading">Little Wandle Phonics Video Vault</h2>
+          <p>
+            Here are videos to show how sounds should be pronounced, how to blend sounds into words
+            and what we mean by ‘tricky’ words.
+          </p>
+        </div>
+      </div>
+
+      <div class="video-grid">
+        <article class="card video-card">
+          <h3>Autumn 1</h3>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/-ZtjFIvA_fs?si=r1I1q4pyXiCCjuf7"
+              title="Little Wandle phonics video: Autumn 1"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article class="card video-card">
+          <h3>Blending</h3>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/IL5YUCPyC5I?si=i4xvn6L35wTWp_Lo"
+              title="Little Wandle phonics video: Blending"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article class="card video-card">
+          <h3>Autumn 2</h3>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/qDu3JAjf-U0?si=Asabp1pX1c1m3EyV"
+              title="Little Wandle phonics video: Autumn 2"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article class="card video-card">
+          <h3>Spring 1</h3>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/DvOuc7cWXxc?si=WzGNbR1pQIyhrtv4"
+              title="Little Wandle phonics video: Spring 1"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article class="card video-card">
+          <h3>Tricky words</h3>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/NTC0PbtmeUA?si=8oIGAVsAEuzxDpd2"
+              title="Little Wandle phonics video: Tricky words"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="spotify" aria-labelledby="spotify-heading">
+      <div class="section-heading">
+        <div class="number" aria-hidden="true">3</div>
+        <div>
+          <h2 id="spotify-heading">Engaines Spotify Playlist</h2>
+          <p>High-quality songs, poems and stories to boost your child’s phonic understanding.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed-wrap">
+          <iframe
+            class="spotify"
+            src="https://open.spotify.com/embed/playlist/44zbosenNY0Ja3AT9cBCZC?utm_source=generator&si=54112e4d251e4f03"
+            title="Engaines phonics Spotify playlist"
+            loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+        <div class="tip-list">
+          <div class="tip"><strong>Listen together.</strong><br>Sing, clap and join in with your child.</div>
+          <div class="tip"><strong>Keep it playful.</strong><br>There is no need to turn every song into a lesson.</div>
+          <div class="tip"><strong>Repeat favourites.</strong><br>Repetition helps children remember sounds and words.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="padlet" aria-labelledby="padlet-heading">
+      <div class="section-heading">
+        <div class="number" aria-hidden="true">4</div>
+        <div>
+          <h2 id="padlet-heading">Padlet Discussion Board</h2>
+          <p>
+            Post your questions for the Reception teachers, or examples of games or strategies that
+            have worked for you and your child.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <p>
+          Click <strong>+ Post</strong>, choose <strong>all tools</strong>, and then you can record
+          a voice note, add a video or write your response.
+        </p>
+        <div class="embed-wrap">
+          <iframe
+            class="padlet"
+            src="https://padlet.com/embed/s023yzmaiwva2di1epnf"
+            title="Engaines Reception phonics family discussion board"
+            loading="lazy"
+            allow="camera;microphone;geolocation;display-capture;clipboard-write"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quiz" aria-labelledby="quiz-heading">
+      <div class="section-heading">
+        <div class="number" aria-hidden="true">5</div>
+        <div>
+          <h2 id="quiz-heading">Quiz</h2>
+          <p>
+            Check your understanding and pinpoint areas where you may want to ask more questions.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed-wrap">
+          <iframe
+            class="quiz"
+            src="https://view.genially.com/6ab900292a1ef73605332912"
+            title="Engaines Reception phonics family quiz"
+            loading="lazy"
+            allowfullscreen></iframe>
+        </div>
+        <p class="small-note">
+          If the quiz does not appear, use the button below to open it in a new tab.
+        </p>
+        <a class="button gold" href="https://view.genially.com/6ab900292a1ef73605332912" target="_blank" rel="noopener noreferrer">
+          Open the quiz
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="home-heading">
+      <div class="section-heading">
+        <div class="number" aria-hidden="true">★</div>
+        <div>
+          <h2 id="home-heading">A few simple reminders</h2>
+        </div>
+      </div>
+
+      <div class="card">
+        <ul>
+          <li><strong>Keep practice short.</strong> A few minutes can make a difference.</li>
+          <li><strong>Say sounds clearly.</strong> Avoid adding an extra “uh” sound where possible.</li>
+          <li><strong>Blend sounds together.</strong> Help your child push the sounds together to read the word.</li>
+          <li><strong>Celebrate effort.</strong> Mistakes are part of learning.</li>
+          <li><strong>Ask us.</strong> If you are unsure, use the Padlet or speak to the Reception team.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Engaines Primary School and Nursery</strong></p>
+    <p>Reception ‘Phonics for Families’</p>
+    <p>Believe • Achieve • Succeed</p>
+  </footer>
+</body>
+</html>
